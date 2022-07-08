@@ -1,3 +1,5 @@
+Source: https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
+
 Use in Javascript:
 
 ```javascript
@@ -12,3 +14,4 @@ let R = spearman(
 
 console.log(R); //0.6727272727272727
 ```
+
