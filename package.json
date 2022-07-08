@@ -1,0 +1,12 @@
+{
+  "name": "spearman-correlation-test",
+  "type":"module",
+  "version": "1.0.0",
+  "description": "A Javascript function to compute Spearman's correlation R between 2 arrays (x and y)",
+  "main": "module.js",
+  "scripts":{
+    "test": "node tests.js"
+  },
+  "author": "Lluís Bosch (github.com/holalluis)",
+  "license": "ISC"
+}
