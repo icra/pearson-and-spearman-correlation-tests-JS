@@ -1,5 +1,12 @@
 Source: https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
 
+The Spearman correlation between two variables is equal to the Pearson
+correlation between the rank values of those two variables; while Pearson's
+correlation assesses linear relationships, Spearman's correlation assesses
+monotonic relationships (whether linear or not). If there are no repeated data
+values, a perfect Spearman correlation of +1 or −1 occurs when each of the
+variables is a perfect monotone function of the other.
+
 Use in Javascript:
 
 ```javascript
@@ -14,4 +21,3 @@ let R = spearman(
 
 console.log(R); //0.6727272727272727
 ```
-
