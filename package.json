@@ -1,8 +1,8 @@
 {
-  "name": "spearman-correlation-test",
+  "name": "pearson-and-spearman-correlation-tests-JS",
   "type":"module",
   "version": "1.0.0",
-  "description": "A Javascript function to compute Spearman's correlation R between 2 arrays (x and y)",
+  "description": "A module to compute Pearson's and Spearman's correlation coefficients between 2 numeric arrays (x and y) of the same size",
   "main": "module.js",
   "scripts":{
     "test": "node tests.js"

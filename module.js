@@ -1,3 +1,29 @@
+//https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+export function pearson(x,y){
+  if(x.length!=y.length) throw("x and y have different length");
+
+  //number of samples
+  let n = x.length;
+
+  //means
+  let xm = x.mean();
+  let ym = y.mean();
+
+  //sum of diffs from mean
+  let s_xy = 0;
+  let ss_x = 0;
+  let ss_y = 0;
+  for(let i=0;i<n;i++){
+    s_xy += (x[i]-xm)*(y[i]-ym);
+    ss_x += Math.pow(x[i]-xm,2);
+    ss_y += Math.pow(y[i]-ym,2);
+  }
+
+  //compute pearson's correlation coefficient
+  let r = s_xy/(Math.sqrt(ss_x)*Math.sqrt(ss_y));
+  return r;
+}
+
 //https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
 export function spearman(x,y){
   if(x.length!=y.length) throw("x and y have different length");
@@ -45,33 +71,7 @@ export function spearman(x,y){
   return R;
 }
 
-//https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
-export function pearson(x,y){
-  if(x.length!=y.length) throw("x and y have different length");
-
-  //number of samples
-  let n = x.length;
-
-  //means
-  let xm = x.mean();
-  let ym = y.mean();
-
-  //sum of diffs from mean
-  let s_xy = 0;
-  let ss_x = 0;
-  let ss_y = 0;
-  for(let i=0;i<n;i++){
-    s_xy += (x[i]-xm)*(y[i]-ym);
-    ss_x += Math.pow(x[i]-xm,2);
-    ss_y += Math.pow(y[i]-ym,2);
-  }
-
-  //compute pearson's correlation coefficient
-  let r = s_xy/(Math.sqrt(ss_x)*Math.sqrt(ss_y));
-  return r;
-}
-
-//utils for numeric arrays
+//utils
 Array.prototype.sum=function(){return this.reduce((p,c)=>(p+c),0)};
 Array.prototype.mean=function(){return this.length ? this.sum()/this.length : 0};
 Array.prototype.std_dev=function(){
